@@ -1,0 +1,32 @@
+// Design/proofing mixins
+    @mixin stroke($size: 1px, $style: dotted, $color: red) {
+        outline: $size $style $color;
+    }
+    @mixin fill($color: red, $alpha: 0.5) {
+        background-color: rgba($color, $alpha);
+    }
+
+// TODO: name & test below
+    @mixin shadow($horOffset, $verOffset, $blurRadius, $spreadRadius, $color) {
+        -moz-box-shadow:    $horOffset $verOffset $blurRadius $spreadRadius $color;
+        -webkit-box-shadow: $horOffset $verOffset $blurRadius $spreadRadius $color;
+        box-shadow:         $horOffset $verOffset $blurRadius $spreadRadius $color;
+    }
+
+// TODO: name & test below
+    @mixin user-select($select: none, $cursor: default) {
+        -webkit-touch-callout: $select;
+        -webkit-user-select: $select;
+        -khtml-user-select: $select;
+        -moz-user-select: $select;
+        -ms-user-select: $select;
+        -o-user-select: $select;
+        user-select: $select;
+        cursor: $cursor;
+    }
+    @mixin user-select-none($cursor: default) {
+        @include user-select(none, $cursor);
+    }
+    @mixin user-select-default {
+        @include user-select(text, default);
+    }

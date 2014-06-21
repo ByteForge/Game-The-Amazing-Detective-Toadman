@@ -1,0 +1,132 @@
+// Font sizes
+    $thin:          100;
+    $extra-light:   200;
+    $light:         300;
+    $regular:       400;
+    $medium:        500;
+    $semi-bold:     600;
+    $bold:          700;
+    $black:         800;
+    $ultra-bold:    900;
+
+// Font format types
+    $fontFormat-OpenType: format('opentype');
+    $fontFormat-TrueType: format('truetype');
+
+// Font default fallbacks
+    $fontDefaultFallback-serif: Serif, serif;
+    $fontDefaultFallback-sans-serif: Sans-Serif, sans-serif;
+
+// Font effects
+    @mixin anti-aliasing {
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+        text-shadow: rgba(0,0,0,.01) 0 0 1px;
+    }
+    // TODO: compatibility with anti-aliasing mixin (text-shadow VS text-shadow - collision)
+    @mixin drop-shadow($xCoord: 0px, $yCoord: 2px, $blurRadius: 0px, $color: black) {
+        text-shadow: $xCoord $yCoord $blurRadius $color;
+    }
+
+// Custom fonts
+    // AlwaysHereToo
+    $fontAlwaysHereToo: 'AlwaysHereToo';
+        // Normal 400
+        @font-face {
+            font-family: $fontAlwaysHereToo;
+            src: url("../fonts/AlwaysHereToo.ttf") $fontFormat-TrueType;
+            font-style:  normal; // regular
+            font-weight: $regular;
+        }
+    // Nexa
+    // Nexa
+    $fontNexa: 'Nexa';
+        // Light 300
+        @font-face {
+            font-family: $fontNexa;
+            src: url("../fonts/Nexa_Light_1.otf") $fontFormat-OpenType;
+            font-style:  normal; // regular
+            font-weight: $light;
+        }
+        // Bold 700
+        @font-face {
+            font-family: $fontNexa;
+            src: url("../fonts/Nexa_Bold_1.otf") $fontFormat-OpenType;
+            font-style:  normal; // regular
+            font-weight: $bold;
+        }
+    // Corduroy-Regular
+    $fontCorduroyRegular: 'Corduroy-Regular';
+        // Normal 400
+        @font-face {
+            font-family: $fontCorduroyRegular;
+            src: url("../fonts/Corduroy-Regular.otf") $fontFormat-OpenType;
+            font-style:  normal; // regular
+            font-weight: $regular;
+        }
+    // Hustlers Rough Demo
+    $fontHustlersRoughDemo: 'Hustlers Rough Demo';
+        // Normal 400
+        @font-face {
+            font-family: $fontHustlersRoughDemo;
+            src: url("../fonts/Hustlers_Rough_Demo.otf") $fontFormat-OpenType;
+            font-style:  normal; // regular
+            font-weight: $regular;
+        }
+    // Mesquite Std
+    $fontMesquiteStd: 'MesquiteStd';
+        // Medium 500
+        @font-face {
+            font-family: $fontMesquiteStd;
+            src: url("../fonts/MesquiteStd.otf") $fontFormat-OpenType;
+            font-style:  normal; // regular
+            font-weight: $medium;
+        }
+    // OFL Sorts Mill Goudy
+    $fontOFLSortsMillGoudy: 'OFLGoudyStM';
+        // Normal 400
+        @font-face {
+            font-family: $fontOFLSortsMillGoudy;
+            src: url("../fonts/OFLGoudyStM.otf") $fontFormat-OpenType;
+            font-style:  normal; // regular
+            font-weight: $regular;
+        }
+        // Normal 400 Italic
+        @font-face {
+            font-family: $fontOFLSortsMillGoudy;
+            src: url("../fonts/OFLGoudyStM-Italic.otf") $fontFormat-OpenType;
+            font-style:  italic;
+            font-weight: $regular;
+        }
+    // OFL Sorts Mill Goudy TT
+    $fontOFLSortsMillGoudyTT: 'OFLGoudyStMTT';
+        // Normal 400
+        @font-face {
+            font-family: $fontOFLSortsMillGoudyTT;
+            src: url("../fonts/OFLGoudyStMTT.ttf") $fontFormat-TrueType;
+            font-style:  normal; // regular
+            font-weight: $regular;
+        }
+        // Normal 400 Italic
+        @font-face {
+            font-family: $fontOFLSortsMillGoudyTT;
+            src: url("../fonts/OFLGoudyStMTT-Italic.ttf") $fontFormat-TrueType;
+            font-style:  italic;
+            font-weight: $regular;
+        }
+    // UglyQua
+    $fontUglyQua: 'UglyQua';
+        // Normal 400
+        @font-face {
+            font-family: $fontUglyQua;
+            src: url("../fonts/UglyQua.ttf") $fontFormat-TrueType;
+            font-style:  normal; // regular
+            font-weight: $regular;
+        }
+        // Normal 400 Italic
+        @font-face {
+            font-family: $fontUglyQua;
+            src: url("../fonts/UglyQua-Italic.ttf") $fontFormat-TrueType;
+            font-style:  italic;
+            font-weight: $regular;
+        }

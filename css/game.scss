@@ -1,0 +1,675 @@
+@import 'reset';
+@import 'fonts';
+@import 'tools';
+
+    // Colors
+        $primaryColor:      #B8AB96;
+        $secondaryColor:    #1F2C3E;
+
+    // Fonts
+        @mixin fontAlwaysHereToo {
+            font-family: $fontAlwaysHereToo, $fontDefaultFallback-sans-serif;
+            font-style:  normal; // regular
+            font-weight: $regular;
+        }
+        @mixin fontNexa-light {
+            font-family: $fontNexa, $fontDefaultFallback-sans-serif;
+            font-style:  normal; // regular
+            font-weight: $light;
+        }
+        @mixin fontNexa-bold {
+            font-family: $fontNexa, $fontDefaultFallback-sans-serif;
+            font-style:  normal; // regular
+            font-weight: $bold;
+        }
+        @mixin fontCorduroyRegular {
+            font-family: $fontCorduroyRegular, $fontDefaultFallback-sans-serif;
+            font-style:  normal; // regular
+            font-weight: $regular;
+        }
+        @mixin fontHustlersRoughDemo {
+            font-family: $fontHustlersRoughDemo, $fontDefaultFallback-sans-serif;
+            font-style:  normal; // regular
+            font-weight: $regular;
+        }
+        @mixin fontMesquiteStd {
+            font-family: $fontMesquiteStd, $fontDefaultFallback-sans-serif;
+            font-style:  normal; // regular
+            font-weight: $medium;
+        }
+        @mixin fontOFLSortsMillGoudy {
+            font-family: $fontOFLSortsMillGoudy, $fontDefaultFallback-sans-serif;
+            font-style:  normal; // regular
+            font-weight: $regular;
+        }
+        @mixin fontOFLSortsMillGoudy-italic {
+            font-family: $fontOFLSortsMillGoudy, $fontDefaultFallback-sans-serif;
+            font-style:  italic;
+            font-weight: $regular;
+        }
+        @mixin fontOFLSortsMillGoudyTT {
+            font-family: $fontOFLSortsMillGoudyTT, $fontDefaultFallback-sans-serif;
+            font-style:  normal; // regular
+            font-weight: $regular;
+        }
+        @mixin fontOFLSortsMillGoudyTT-italic {
+            font-family: $fontOFLSortsMillGoudyTT, $fontDefaultFallback-sans-serif;
+            font-style:  italic;
+            font-weight: $regular;
+        }
+        @mixin fontUglyQua {
+            font-family: $fontUglyQua, $fontDefaultFallback-sans-serif;
+            font-style:  normal; // regular
+            font-weight: $regular;
+        }
+        @mixin fontUglyQua-italic {
+            font-family: $fontUglyQua, $fontDefaultFallback-sans-serif;
+            font-style:  italic;
+            font-weight: $regular;
+        }
+
+    // Images
+        $gameElements: url('../img/game_elements.png');
+
+    // Elements
+        $sidePanelBackground: $gameElements 0px 0px;
+        $mainPanelBackground: $gameElements -754px 0px;
+
+        $sidePanelPaddings: 12px;
+        $mainPanelPaddings: 12px;
+
+        @mixin sidePanel {
+            display: inline-block;
+            position: relative;
+            width:  177px;
+            height: 505px;
+            background: $gameElements;
+
+            > .container {
+                display: block;
+                position: absolute;
+                top:    $sidePanelPaddings;
+                left:   $sidePanelPaddings;
+                bottom: $sidePanelPaddings;
+                right:  $sidePanelPaddings;
+            }
+        }
+        @mixin mainPanel {
+            display: inline-block;
+            position: relative;
+            width:  754px;
+            height: 505px;
+            background: $gameElements -206px 0px;
+
+            > .container {
+                //@include stroke;
+                display: block;
+                position: absolute;
+                top:    $mainPanelPaddings;
+                left:   $mainPanelPaddings;
+                bottom: $mainPanelPaddings;
+                right:  $mainPanelPaddings;
+                overflow: hidden;
+            }
+        }
+        @mixin logoNormal {
+            display: inline-block;
+            position: relative;
+            width:  131px;
+            height: 97px;
+            background: $gameElements -376px -688px;
+        }
+        @mixin logoLarge {
+            display: inline-block;
+            position: relative;
+            width:  197px;
+            height: 145px;
+            background: $gameElements -137px -664px;
+        }
+        @mixin arrowToRight {
+            display: inline-block;
+            position: relative;
+            width:  23px;
+            height: 14px;
+            background: $gameElements 0px -524px;
+        }
+        @mixin arrowToLeft {
+            display: inline-block;
+            position: relative;
+            width:  23px;
+            height: 14px;
+            background: $gameElements -23px -524px;
+        }
+        @mixin decorGray {
+            display: inline-block;
+            position: relative;
+            width:  80px;
+            height: 28px;
+            background: $gameElements -58px -514px;
+        }
+        @mixin decorBlue($display: inline-block) {
+            display: $display;
+            position: relative;
+            width:  183px;
+            height: 67px;
+            background: $gameElements -541px -718px;
+        }
+        @mixin star {
+            display: inline-block;
+            position: relative;
+            width:  34px;
+            height: 31px;
+            background: $gameElements -496px -512px;
+        }
+        @mixin circle {
+            display: inline-block;
+            position: relative;
+            width:  105px;
+            height: 104px;
+            background: $gameElements 0px -643px;
+        }
+
+    // Buttons
+        @mixin buttonNormal {
+            @include user-select-none();
+            display: inline-block;
+            position: relative;
+            width:  250px;
+            height: 36px;
+
+            > .label {
+                display: inline-block;
+                position: absolute;
+                margin: 12px 0 0 0;
+                width:  100%;
+                height: 100%;
+                    @include fontAlwaysHereToo;
+                    font-size: 16px;
+                    color: black;
+                    text-align: center;
+            }
+            > i:nth-of-type(2) {
+                display: inline-block;
+                position: absolute;
+                left: 0;
+                width:  23px;
+                height: 100%;
+                background: $gameElements 0px -607px;
+            }
+            > i:nth-of-type(3) {
+                display: inline-block;
+                position: absolute;
+                left:  23px;
+                right: 23px;
+                height: 100%;
+                background: $gameElements -23px -607px;
+            }
+            > i:nth-of-type(4) {
+                display: inline-block;
+                position: absolute;
+                right: 0;
+                width:  23px;
+                height: 100%;
+                background: $gameElements -648px -607px;
+            }
+        }
+        @mixin buttonLarge {
+            @include user-select-none();
+            display: inline-block;
+            position: relative;
+            width:  250px;
+            height: 54px;
+
+            > .label {
+                display: inline-block;
+                position: absolute;
+                margin: 20px 0 0 0;
+                width:  100%;
+                height: 100%;
+                    @include fontAlwaysHereToo;
+                    font-size: 16px;
+                    color: black;
+                    text-align: center;
+            }
+            > i:nth-of-type(2) {
+                display: inline-block;
+                position: absolute;
+                left: 0;
+                width:  35px;
+                height: 100%;
+                background: $gameElements 0px -552px;
+            }
+            > i:nth-of-type(3) {
+                display: inline-block;
+                position: absolute;
+                left:  35px;
+                right: 35px;
+                height: 100%;
+                background: $gameElements -35px -552px;
+            }
+            > i:nth-of-type(4) {
+                display: inline-block;
+                position: absolute;
+                right: 0;
+                width:  35px;
+                height: 100%;
+                background: $gameElements -925px -552px;
+            }
+        }
+        @mixin buttonSwitchLeftGray {
+            display: inline-block;
+            position: relative;
+            width:  105px;
+            height: 40px;
+            background: $gameElements -265px -510px;
+        }
+        @mixin buttonSwitchRightGray {
+            display: inline-block;
+            position: relative;
+            width:  105px;
+            height: 40px;
+            background: $gameElements -371px -510px;
+        }
+        @mixin buttonSwitchLeftBlue {
+            display: inline-block;
+            position: relative;
+            width:  105px;
+            height: 40px;
+            background: $gameElements -547px -510px;
+        }
+        @mixin buttonSwitchRightBlue {
+            display: inline-block;
+            position: relative;
+            width:  105px;
+            height: 40px;
+            background: $gameElements -663px -510px;
+        }
+        @mixin buttonMenu {
+            @include user-select-none();
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            height: 50px;
+            background-color: $secondaryColor;
+
+            > i:nth-of-type(1) {
+                display: inline-block;
+                position: absolute;
+                padding: 17px 0 0 0;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px;
+                    @include fontCorduroyRegular;
+                    font-size: 13px;
+                    color: $primaryColor;
+                    text-align: center;
+            }
+
+            $arrowMarginTop: 17px;
+
+            > i:nth-of-type(2) {
+                @include arrowToRight;
+                position: absolute;
+                margin-top: $arrowMarginTop;
+                left: 5px;
+            }
+            > i:nth-of-type(3) {
+                @include arrowToLeft;
+                position: absolute;
+                margin-top: $arrowMarginTop;
+                right: 5px;
+            }
+        }
+
+    // Frames
+        @mixin frameGeneral {
+            border: 3px solid $secondaryColor;
+        }
+    // Titles
+        @mixin titleGeneral($arrowMarginTop: 17px) {
+            @include user-select-none();
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 50px;
+            background-color: $secondaryColor;
+
+            > i:nth-of-type(1) {
+                display: inline-block;
+                position: absolute;
+                padding: 13px 0 0 0;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px;
+                    @include fontCorduroyRegular;
+                    font-size: 20px;
+                    color: $primaryColor;
+                    text-align: center;
+            }
+
+            $arrow-margin-top: $arrowMarginTop;
+
+            > i:nth-of-type(2) {
+                @include arrowToRight;
+                position: absolute;
+                margin-top: $arrow-margin-top;
+                left: 25px;
+            }
+            > i:nth-of-type(3) {
+                @include arrowToLeft;
+                position: absolute;
+                margin-top: $arrow-margin-top;
+                right: 25px;
+            }
+        }
+
+    // Label
+        @mixin labelGeneral($fontSize: 20px) {
+            @include user-select-none;
+            display: inline-block;
+            position: relative;
+            width:  250px;
+            height: 50px;
+
+            > i {
+                display: inline-block;
+                position: absolute;
+                padding: 13px 0 0 0;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px;
+                    @include fontAlwaysHereToo;
+                    font-size: $fontSize;
+                    color: $secondaryColor;
+                    text-align: center;
+            }
+        }
+
+    // Input fields
+        @mixin inputGeneral($fontSize: 24px) {
+            display: inline-block;
+            position: relative;
+            width:  250px;
+            height: 55px;
+
+            > input {
+                display: inline-block;
+                position: absolute;
+                z-index: 10;
+                padding: 2px 0 0 0;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                background: none;
+                    @include fontAlwaysHereToo;
+                    font-size: $fontSize;
+                    color: $secondaryColor;
+                    text-align: center;
+            }
+            > i:nth-of-type(1) {
+                display: inline-block;
+                position: absolute;
+                left: 0;
+                width:  35px;
+                height: 100%;
+                background: $gameElements 0px -552px;
+            }
+            > i:nth-of-type(2) {
+                display: inline-block;
+                position: absolute;
+                left:  35px;
+                right: 35px;
+                height: 100%;
+                background: $gameElements -35px -552px;
+            }
+            > i:nth-of-type(3) {
+                display: inline-block;
+                position: absolute;
+                right: 0;
+                width:  35px;
+                height: 100%;
+                background: $gameElements -925px -552px;
+            }
+        }
+
+    // Faces
+        @mixin faceCharacterMain {
+            display: inline-block;
+            position: relative;
+            width: 186px;
+            height: 243px;
+
+            > i:nth-of-type(1) {
+                display: inline-block;
+                position: absolute;
+                margin: -15px 0 0 -20px;
+                width:  100%;
+                height: 100%;
+                background: $gameElements -28px -832px;
+                opacity: 0;
+            }
+            > i:nth-of-type(2) {
+                display: inline-block;
+                position: absolute;
+                margin: -15px 0 0 -20px;
+                width:  100%;
+                height: 100%;
+                background: $gameElements -234px -832px;
+                opacity: 0;
+            }
+            > i:nth-of-type(3) {
+                display: inline-block;
+                position: absolute;
+                margin: -15px 0 0 -20px;
+                width:  100%;
+                height: 100%;
+                background: $gameElements -436px -832px;
+                opacity: 1;
+            }
+        }
+
+
+body {
+    font-size: 0;
+    //background-color: lightgray;
+    background-color: $secondaryColor;
+}
+    #docWrapper {
+        display:  table;
+        position: absolute;
+        height: 100%;
+        width:  100%;
+    }
+        #docMiddle {
+            display: table-cell;
+            vertical-align: middle;
+        }
+            #docInner {
+                margin: 0 auto;
+                width: 960px;
+                overflow: hidden;
+                //height: 500px;
+                //background-color: $primaryColor;
+
+                > div {
+                    /*
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    */
+
+                    > .sidePanel {
+                        @include sidePanel;
+
+                        > .container {
+
+                            > .logo {
+                                display: block;
+                                border: 3px solid $secondaryColor;
+                                border-bottom: none;
+                                height: 120px;
+                                //margin: 10px auto 0 auto;
+                                > i {
+                                    @include logoNormal;
+                                    display: block;
+                                    margin: 10px auto 0 auto;
+                                }
+                            }
+                            > .menu {
+                                border: 3px solid $secondaryColor;
+                                padding: 3px;
+
+                                > .stories {
+                                    @include buttonMenu;
+                                    margin-bottom: 4px;
+                                }
+                                > .play {
+                                    @include buttonMenu;
+                                    margin-bottom: 4px;
+                                }
+                                > .notes {
+                                    @include buttonMenu;
+                                }
+                            }
+                            > .character {
+                                display: block;
+                                position: relative;
+                                border: 3px solid $secondaryColor;
+                                border-top: none;
+                                overflow: hidden;
+                                height: 192px;
+
+                                > div {
+                                    @include faceCharacterMain;
+                                }
+                            }
+                        }
+                    }
+
+                    > .mainPanel {
+                        @include mainPanel;
+
+                        > .container {
+
+                            > .mainMenu {
+                                @include frameGeneral;
+                                margin: 0 0 4px 0;
+                                position: absolute;
+                                width: 100%;
+                                height: 100%;
+
+                                > .back {
+                                    @include buttonSwitchLeftGray;
+                                    display: inline-block;
+                                    position: absolute;
+
+                                }
+                                > .logo {
+                                    @include logoLarge;
+                                    display: block;
+                                    margin: 10px auto 0 auto;
+                                }
+                                > .newGame {
+                                    @include buttonLarge;
+                                    display: block;
+                                    margin: 20px auto 0 auto;
+                                }
+                                > .continue {
+                                    @include buttonLarge;
+                                    display: block;
+                                    margin: 10px auto 0 auto;
+                                }
+                                > .options {
+                                    @include buttonNormal;
+                                    display: block;
+                                    margin: 25px auto 0 auto;
+                                }
+                                > .highScores {
+                                    @include buttonNormal;
+                                    display: block;
+                                    margin: 10px auto 0 auto;
+                                }
+                                > .howToPlay {
+                                    @include buttonNormal;
+                                    display: block;
+                                    margin: 10px auto 0 auto;
+                                }
+                            }
+                            > .newGame {
+                                @include frameGeneral;
+                                position: absolute;
+                                margin: 0 0 4px 0;
+                                width: 100%;
+                                height: 100%;
+
+                                > .title {
+                                    @include titleGeneral;
+                                }
+                                > .back {
+                                    @include buttonSwitchLeftBlue;
+                                    position: relative;
+                                    margin: 25px 0 0 25px;
+                                }
+                                > .label {
+                                    @include labelGeneral(32px);
+                                    display: block;
+                                    margin: 20px auto 0 auto;
+                                    width: 400px;
+                                }
+                                > .name {
+                                    @include inputGeneral(28px);
+                                    display: block;
+                                    margin: 20px auto 0 auto;
+                                    width: 450px;
+                                }
+                                > .start {
+                                    @include buttonLarge;
+                                    display: block;
+                                    margin: 100px auto 0 auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+/*
+    #docWrapper {
+        display: block;
+        margin: 0 auto;
+        width:  960px;
+        height: 500px;
+        background-color: $primaryColor;
+    }
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

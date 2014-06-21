@@ -1,0 +1,814 @@
+@import 'reset';
+@import 'fonts';
+@import 'tools';
+
+    // Colors
+        $primaryColor:      #B8AB96;
+        $secondaryColor:    #1F2C3E;
+
+    // Fonts
+        @mixin fontAlwaysHereToo {
+            font-family: $fontAlwaysHereToo, $fontDefaultFallback-sans-serif;
+            font-style:  normal; // regular
+            font-weight: $regular;
+        }
+        @mixin fontNexa-light {
+            font-family: $fontNexa, $fontDefaultFallback-sans-serif;
+            font-style:  normal; // regular
+            font-weight: $light;
+        }
+        @mixin fontNexa-bold {
+            font-family: $fontNexa, $fontDefaultFallback-sans-serif;
+            font-style:  normal; // regular
+            font-weight: $bold;
+        }
+        @mixin fontCorduroyRegular {
+            font-family: $fontCorduroyRegular, $fontDefaultFallback-sans-serif;
+            font-style:  normal; // regular
+            font-weight: $regular;
+        }
+        @mixin fontHustlersRoughDemo {
+            font-family: $fontHustlersRoughDemo, $fontDefaultFallback-sans-serif;
+            font-style:  normal; // regular
+            font-weight: $regular;
+        }
+        @mixin fontMesquiteStd {
+            font-family: $fontMesquiteStd, $fontDefaultFallback-sans-serif;
+            font-style:  normal; // regular
+            font-weight: $medium;
+        }
+        @mixin fontOFLSortsMillGoudy {
+            font-family: $fontOFLSortsMillGoudy, $fontDefaultFallback-sans-serif;
+            font-style:  normal; // regular
+            font-weight: $regular;
+        }
+        @mixin fontOFLSortsMillGoudy-italic {
+            font-family: $fontOFLSortsMillGoudy, $fontDefaultFallback-sans-serif;
+            font-style:  italic;
+            font-weight: $regular;
+        }
+        @mixin fontOFLSortsMillGoudyTT {
+            font-family: $fontOFLSortsMillGoudyTT, $fontDefaultFallback-sans-serif;
+            font-style:  normal; // regular
+            font-weight: $regular;
+        }
+        @mixin fontOFLSortsMillGoudyTT-italic {
+            font-family: $fontOFLSortsMillGoudyTT, $fontDefaultFallback-sans-serif;
+            font-style:  italic;
+            font-weight: $regular;
+        }
+        @mixin fontUglyQua {
+            font-family: $fontUglyQua, $fontDefaultFallback-sans-serif;
+            font-style:  normal; // regular
+            font-weight: $regular;
+        }
+        @mixin fontUglyQua-italic {
+            font-family: $fontUglyQua, $fontDefaultFallback-sans-serif;
+            font-style:  italic;
+            font-weight: $regular;
+        }
+
+    // Images
+        $backgroundTop:     url('../img/bg_top.png') no-repeat;
+        $backgroundMiddle:  url('../img/bg_middle.png') repeat-y;
+        $backgroundBottom:  url('../img/bg_bottom.png') no-repeat;
+        $siteElements:      url('../img/site_elements.png');
+        $imageOrnamentBackground: url("../img/ornament_background.png") repeat-x;
+
+        @mixin ornamentLeft {
+            display: inline-block;
+            width:  35px;
+            height: 51px;
+            background: $siteElements -229px 0px;
+        }
+        @mixin diamondHeader {
+            display: inline-block;
+            padding: 20px 0 0 0;
+            height: 51px;
+            background: $imageOrnamentBackground;
+            > i {
+                display: block;
+                margin: 0 auto;
+                width:  10px;
+                height: 10px;
+                background: $siteElements -301px 0px;
+            }
+        }
+        @mixin diamondBanner {
+            display: inline-block;
+            width:  150px;
+            > i {
+                display: block;
+                margin: 0 auto;
+                width:  10px;
+                height: 10px;
+                background: $siteElements -301px -10px;
+            }
+        }
+            @mixin ribbonLeft {
+                width:  13px;
+                height: 15px;
+                background: $siteElements -312px 0px;
+            }
+            @mixin ribbonRight {
+                width:  13px;
+                height: 15px;
+                background: $siteElements -325px 0px;
+            }
+        @mixin ribbonBanner {
+            display: block;
+            position: relative;
+            height: 15px;
+
+            > i:nth-of-type(1) {
+                @include ribbonLeft;
+                display: inline-block;
+                position: absolute;
+                left: 0;
+            }
+            > i:nth-of-type(2) {
+                display: inline-block;
+                position: absolute;
+                left: 13px;
+                right: 13px;
+                height: 100%;
+                background-color: $secondaryColor;
+            }
+            > i:nth-of-type(3) {
+                @include ribbonRight;
+                display: inline-block;
+                position: absolute;
+                right: 0;
+            }
+        }
+        @mixin arrowLeft {
+            width:  36px;
+            height: 23px;
+            background: $siteElements -301px -26px;
+        }
+        @mixin arrowRight {
+            width:  36px;
+            height: 23px;
+            background: $siteElements -338px -26px;
+        }
+        @mixin figureLeft {
+            width:  71px;
+            height: 25px;
+            background: $siteElements -340px 0px;
+        }
+        @mixin figureRight {
+            width:  71px;
+            height: 25px;
+            background: $siteElements -412px 0px;
+        }
+        @mixin ribbonStories {
+            display: block;
+            position: relative;
+
+            > i:nth-of-type(1) {
+                @include ribbonLeft;
+                display: inline-block;
+                position: absolute;
+                left: 0;
+            }
+            > i:nth-of-type(2) {
+                display: inline-block;
+                position: absolute;
+                left: 13px;
+                right: 13px;
+                height: 100%;
+                background-color: $secondaryColor;
+            }
+            > i:nth-of-type(3) {
+                @include ribbonRight;
+                display: inline-block;
+                position: absolute;
+                right: 0;
+            }
+        }
+
+        // Logos
+            @mixin mainLogo {
+                display: inline-block;
+                width:  221px;
+                height: 152px;
+                background: $siteElements 0px 0px;
+                vertical-align: top;
+            }
+
+        // Elements
+            // Header
+            @mixin headerLink {
+                @include user-select-none;
+                display: inline-block;
+                padding: 17px 0 0 0;
+                height: 51px;
+                background: $imageOrnamentBackground;
+
+                > i {
+                    display: block;
+
+                    @include fontCorduroyRegular;
+                    font-size: 14px;
+                    color: $primaryColor;
+                    text-align: center;
+                }
+            }
+            @mixin headerLogin {
+                display: inline-block;
+                position: relative;
+                width:  55px;
+                height: 97px;
+                vertical-align: top;
+
+                > i:nth-of-type(1) {
+                    display: inline-block;
+                    position: absolute;
+                    width:  100%;
+                    height: 100%;
+                    background: $siteElements -237px -57px;
+                    opacity: 1;
+                }
+                > i:nth-of-type(2) {
+                    display: inline-block;
+                    position: absolute;
+                    width:  100%;
+                    height: 100%;
+                    background: $siteElements -471px -57px;
+                    opacity: 0;
+                }
+            }
+            @mixin headerAuth {
+                display: inline-block;
+                position: relative;
+                width:  110px;
+                height: 31px;
+
+                > input {
+                    display: inline-block;
+                    position: absolute;
+                    z-index: 10;
+                    width: 100%;
+                    height: 100%;
+                    background: none;
+                        @include fontAlwaysHereToo;
+                        font-size: 11px;
+                        color: $secondaryColor;
+                        text-align: center;
+                }
+                > i:nth-of-type(1) {
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    width:  20px;
+                    height: 31px;
+                    background: $siteElements -301px -50px;
+                }
+                > i:nth-of-type(2) {
+                    display: block;
+                    position: absolute;
+                    left:  20px;
+                    right: 20px;
+                    height: 31px;
+                    background: $siteElements -321px -50px;
+                }
+                > i:nth-of-type(3) {
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    width:  20px;
+                    height: 31px;
+                    background: $siteElements -434px -50px;
+                }
+            }
+            // Banner
+            @mixin bannerTopDecor {
+                display: block;
+
+                > i:nth-of-type(1) {
+                    display: block;
+                    height: 8px;
+                    background-color: $secondaryColor;
+                }
+                > i:nth-of-type(2) {
+                    display: block;
+                    margin: 3px 0 7px 0;
+                    height: 2px;
+                    background-color: $secondaryColor;
+                }
+            }
+            @mixin bannerContainer {
+                display: block;
+                height: 235px;
+                background-color: $secondaryColor;
+                overflow: hidden;
+
+                > i {
+                    display: inline-block;
+                    position: relative;
+                    margin: 2px 0 0 2px;
+                    width:  816px;
+                    height: 231px;
+                    background: $siteElements 0px -230px;
+                }
+            }
+            @mixin bannerBottomDecor {
+                display: block;
+                //height: 43px;
+
+                > .diamonds {
+                    display: block;
+                    padding: 9px 0 0 0;
+                    margin: 0 auto;
+                    width:  455px;
+                    height: 27px;
+                    > i {
+                        @include diamondBanner;
+                    }
+                }
+                > .ribbon {
+                    @include ribbonBanner;
+                }
+            }
+            // Stories
+            @mixin storiesMostPopular {
+                display: block;
+                position: relative;
+                border-bottom: 1px solid black;
+                padding: 11px 0 0 0;
+                width:  100%;
+                height: 60px;
+
+                > i {
+                    &:after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        left: 0px;
+                        bottom: 2px;
+                        width: 100%;
+                        height: 3px;
+                        background-color: black;
+                    }
+
+                    display: block;
+                    margin: 0 auto;
+                    padding: 8px 0 0 0;
+                    width:  153px;
+                    height: 31px;
+                    background: $siteElements -301px -50px;
+                        @include fontCorduroyRegular;
+                        font-size: 12px;
+                        color: black;
+                        text-align: center;
+                }
+            }
+            @mixin storiesArticle {
+                display: block;
+                position: relative;
+                padding: 15px 15px 0 15px;
+                width:  100%;
+
+                //> .image {}
+                > h1 {
+                    margin: 0 0 8px 0;
+                    @include fontCorduroyRegular;
+                    font-size: 17px;
+                    color: black;
+                    text-align: left;
+                }
+                > p {
+                    @include fontUglyQua;
+                    font-size: 12px;
+                    color: black;
+                    text-align: left;
+                }
+            }
+            @mixin storiesArticleSeparator {
+                &:before {
+                    content: '';
+                    display: block;
+                    position: relative;
+                    margin: 10px auto 20px auto;
+                    width:  80px;
+                    height: 4px;
+                    background: $siteElements -375px -26px;
+                }
+            }
+
+            // Footer
+            @mixin ribbonFooter {
+                display: block;
+                width:  100%;
+                height: 100%;
+                background: $siteElements -3px -154px no-repeat;
+            }
+
+    // Default values
+        $pagePaddingTop:    25px;
+        $pagePaddingBottom: 25px;
+        $pagePaddingLeft:   25px;
+        $pagePaddingRight:  25px;
+
+body {
+    background-color: $secondaryColor;
+}
+    #docWrapper {
+        margin: 0 auto;
+        position: relative;
+        width:  960px;
+        font-size: 0;
+        background-color: $secondaryColor;
+    }
+        #background {
+            display:  block;
+            position: relative;
+            //margin: 25px auto 50px auto;
+            margin: 0 auto;
+            padding-top: $pagePaddingTop;
+            width:    905px;
+            height:   100%;
+            > .top {
+                width:  100%;
+                height: 370px;
+                background: $backgroundTop;
+            }
+            > .middle {
+                position: absolute;
+                top:    370px;
+                bottom: 273px + $pagePaddingBottom;
+                width:  100%;
+                background: $backgroundMiddle
+            }
+            > .bottom {
+                position: absolute;
+                width:  100%;
+                height: 273px;
+                bottom: $pagePaddingBottom;
+                background: $backgroundBottom
+            }
+        }
+        #pageWrapper {
+            display: block;
+            position: absolute;
+            top:    $pagePaddingTop;
+            //bottom: $pagePaddingBottom;
+            left:   $pagePaddingLeft;
+            right:  $pagePaddingRight;
+            //background-color: cornflowerblue;
+            //opacity: 0.5;
+
+            $generalContainerWidth: 820px;
+
+            > header {
+                display: block;
+                padding: 12px 0 0 0;
+                width:  100%;
+                height: 180px;
+                //background-color: red;
+                //opacity: 0.5;
+
+                > nav {
+                    display: block;
+                    margin: 0 auto;
+                    width: $generalContainerWidth;
+
+                    $leftMarginTop: 20px;
+                    $rightMarginTop: 20px;
+
+                    > .left {
+                        display: inline-block;
+                        //width:  292px;
+                        margin: 45px 0 0 0;
+                        height: 95px;
+                        vertical-align: top;
+
+                        > .ornament {
+                            @include ornamentLeft;
+                            margin-top: $leftMarginTop;
+                            vertical-align: top;
+                        }
+                        > .play {
+                            @include headerLink;
+                            margin-top: $leftMarginTop;
+                            width: 82px;
+                            vertical-align: top;
+                        }
+                        > .diamond {
+                            @include diamondHeader;
+                            margin-top: $leftMarginTop;
+                            //width: 20px;
+                            vertical-align: top;
+                        }
+                        > .reg {
+                            @include headerLink;
+                            margin-top: $leftMarginTop;
+                            width: 160px;
+                            vertical-align: top;
+                        }
+                        > .border {
+                            display: inline-block;
+                            width:  2px;
+                            height: 100%;
+                            background-color: $secondaryColor;
+                            vertical-align: top;
+                        }
+                    }
+                    > .logo {
+                        @include mainLogo;
+                    }
+                    > .right {
+                        display: inline-block;
+                        margin: 45px 0 0 0;
+                        //width:  292px;
+                        height: 95px;
+                        vertical-align: top;
+
+                        > .border {
+                            display: inline-block;
+                            width:  2px;
+                            height: 100%;
+                            background-color: $secondaryColor;
+                            vertical-align: top;
+                        }
+                        > .about {
+                            @include headerLink;
+                            margin-top: $rightMarginTop;
+                            width: 132px;
+                            vertical-align: top;
+                        }
+                        > .diamond {
+                            @include diamondHeader;
+                            margin-top: $rightMarginTop;
+                            //width: 20px;
+                            vertical-align: top;
+                        }
+                        > .donate {
+                            @include headerLink;
+                            margin-top: $rightMarginTop;
+                            width: 112px;
+                            vertical-align: top;
+                        }
+                        > .login {
+                            @include user-select-none;
+                            @include headerLogin;
+                            margin: 12px 0 0 -3px;
+                        }
+                        > .auth {
+                            display: inline-block;
+                            position: absolute;
+                            top:   138px;
+                            right: 100px;
+                            opacity: 0;
+
+                            > .user {
+                                @include headerAuth;
+                            }
+                            > .pass {
+                                @include headerAuth;
+                                margin-left: 15px
+                            }
+                        }
+                    }
+                }
+            }
+            > .banner {
+                display: block;
+                margin: 0 auto;
+                width:  $generalContainerWidth;
+
+                > .topDecor {
+                    @include bannerTopDecor;
+                }
+                > .container {
+                    @include bannerContainer;
+                }
+                > .bottomDecor {
+                    @include bannerBottomDecor;
+                }
+            }
+            > .stories {
+                display: block;
+                margin: 0 auto 20px auto;
+                width:  $generalContainerWidth;
+
+                > .majorTitle {
+                    display: block;
+                    position: relative;
+                    height: 59px;
+                    > .arrowLeft {
+                        @include arrowLeft;
+                        display: block;
+                        position: absolute;
+                        margin: 20px 0 0 0;
+                        left: 0;
+                    }
+                    > .title {
+                        display: block;
+                        position: absolute;
+                        margin: 7px 0 0 0;
+                        left:  36px;
+                        right: 36px;
+                            @include fontCorduroyRegular;
+                            font-size: 40px;
+                            color: $secondaryColor;
+                            text-align: center;
+                    }
+                    > .arrowRight {
+                        @include arrowRight;
+                        display: block;
+                        position: absolute;
+                        margin: 20px 0 0 0;
+                        right: 0;
+                    }
+                }
+                > .content {
+                    display: block;
+                    margin: 0 auto;
+                    border-top:   4px solid $secondaryColor;
+                    border-left:  1px solid $secondaryColor;
+                    border-right: 1px solid $secondaryColor;
+                    width:  $generalContainerWidth;
+                    //height: 560px;
+
+                    > .minorTitle {
+                        display: block;
+                        position: relative;
+                        border-bottom: 4px solid $secondaryColor;
+                        height: 62px;
+
+                        > .figureLeft {
+                            @include figureLeft;
+                            display: block;
+                            position: absolute;
+                            margin: 17px 0 0 9px;
+                            left: 0;
+                        }
+                        > .title {
+                            display: block;
+                            position: absolute;
+                            margin: 5px 0 0 0;
+                            left:  75px;
+                            right: 75px;
+                                @include fontMesquiteStd;
+                                font-size: 60px;
+                                color: $secondaryColor;
+                                text-align: center;
+                                letter-spacing: 3px;
+                                word-spacing: 6px;
+                        }
+                        > .figureRight {
+                            @include figureRight;
+                            display: block;
+                            position: absolute;
+                            margin: 17px 9px 0 0;
+                            right: 0;
+                        }
+                    }
+                    > .ribbon {
+                        @include ribbonStories;
+                        margin: 2px 0 2px 0;
+                        height: 15px;
+                    }
+                    > .articles {
+                        display: block;
+                        position: relative;
+                        border-top: 1px solid $secondaryColor;
+                        padding: 0 3px 0 3px;
+                        //min-height: 300px;
+                        //height: 100%;
+
+                        .mostPopular {
+                            @include storiesMostPopular;
+                        }
+                        .article {
+                            @include storiesArticle;
+                        }
+                        .article + .article {
+                            @include storiesArticleSeparator;
+                        }
+
+                        > section {
+                            display: inline-block;
+                            border-left: 1px solid $secondaryColor;
+                            padding: 0 0 20px 0;
+                            width:  25%;
+                            height: 100%;
+                            vertical-align: top;
+                        }
+                        > #_4th_column {
+                            border-right: 1px solid $secondaryColor;
+                        }
+                    }
+                    > .more {
+                        display: block;
+                        position: relative;
+                        margin: 0 3px 0 3px;
+                        //margin: 417px 3px 0 3px;
+                        border: 1px solid $secondaryColor;
+                        height: 70px;
+
+                        &:before {
+                            content: '';
+                            display: block;
+                            position: relative;
+                            margin: 3px 0 0 0;
+                            border-top: 1px solid $secondaryColor;
+                            border-bottom: 1px solid $secondaryColor;
+                            height: 10px;
+                        }
+
+                        > .figureLeft {
+                            @include figureLeft;
+                            display: block;
+                            position: absolute;
+                            margin: 17px 0 0 5px;
+                            left: 0;
+                        }
+                        > .stretchLeft {
+                            display: block;
+                            position: absolute;
+                            margin: 25px 0 0 0;
+                            left:   95px;
+                            width:  280px;
+                            height: 1px;
+                            background-color: $secondaryColor;
+                        }
+                        > .more {
+                            display: block;
+                            position: absolute;
+                            margin: 13px 0 0 0;
+                            left:  0px;
+                            right: 0px;
+                                @include fontUglyQua;
+                                font-size: 20px;
+                                color: black;
+                                text-align: center;
+                        }
+                        > .stretchRight {
+                            display: block;
+                            position: absolute;
+                            margin: 25px 0 0 0;
+                            right:  95px;
+                            width:  280px;
+                            height: 1px;
+                            background-color: $secondaryColor;
+                        }
+                        > .figureRight {
+                            @include figureRight;
+                            display: block;
+                            position: absolute;
+                            margin: 17px 5px 0 0;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+            > footer {
+                //@include stroke();
+                display: block;
+                margin: 0 auto;
+                width:  $generalContainerWidth;
+                height: 75px;
+
+                > .container {
+                    @include ribbonFooter;
+
+                    @mixin inlineFooterFont {
+                        font-family: $fontNexa, $fontDefaultFallback-sans-serif;
+                        font-size: 10px;
+                        font-weight: $regular;
+                        color: $primaryColor;
+                        text-align: center;
+
+                        text-shadow: rgba(0,0,0,0.01) 0 0 1px;
+                        -webkit-font-smoothing: antialiased !important;
+                    }
+
+                    > .copyright {
+                        display: block;
+                        box-sizing: content-box;
+                        padding: 15px 0 5px 0;
+                            @include inlineFooterFont;
+                    }
+                    > .links {
+                        display: block;
+                            @include inlineFooterFont;
+
+                        > .separator {
+                            display: inline-block;
+                            width: 2px;
+                            height: 100%;
+                        }
+                        > .separator + i {
+                            border-left: 0px solid $primaryColor;
+                            padding-left: 0px;
+                        }
+                        > i + i {
+                            border-left: 1px solid $primaryColor;
+                            padding-left: 1px;
+                        }
+                    }
+                }
+            }
+        }
